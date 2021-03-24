@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const PORT = process.env.PORT || 3904;
+const PORT = process.env.PORT || 5000;
 const localhost = "127.0.0.1";
 
 
@@ -20,7 +20,44 @@ var hbs = require('express-handlebars').create({
 
 // set the engine and the file extension name and the files that will be used
 app.engine('hbs', hbs.engine);
+app.set('view engine', 'hbs');
 
+app.use('/static', express.static('public'));
+app.use('/', express.static('public'));
+
+// accessing the css and js scripts
+app.use('/', express.static(path.join(__dirname, '/public')));
+app.use('/register/', express.static(path.join(__dirname, '/public')));
+app.use('/login/', express.static(path.join(__dirname, '/public')));
+
+
+
+
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+
+
+app.get('/', function (req, res) {
+    res.render('home', {
+        layout: 'main'
+    });
+});
+
+
+
+
+
+app.get('/register', function(req, res){
+	res.render('register.hbs')
+})
+
+
+app.get('/login', function(req, res){
+	res.render('login.hbs')
+})
 
 
 

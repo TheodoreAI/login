@@ -1,0 +1,63 @@
+.formbox {
+    margin: auto;
+    width: 250px;
+    border: 3px solid rgb(37, 101, 131);
+    padding: 15px;
+    left: 1px;
+    top: auto;
+    position: relative;
+    height: 350px;
+    border-radius: 4px;
+}
+
+
+input{
+	margin: 1px;
+	text-align: center;
+}
+
+button{
+	margin: 1px;
+	text-align: center;
+
+}
+
+
+
+
+/*For the navigation bar*/
+
+
+nav {
+    padding: 10px;
+    @media (min-height: 600px;){
+        padding: 20px;
+    }
+}
+
+
+/* will need to add code for the mobile version */
+nav.flexbox{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+
+}
+
+nav.flexbox a {
+
+     position: relative;
+     text-decoration: none;
+     color: white;
+     font-size: large;
+     font-weight: bold;
+     margin: auto;
+
+
+}
+nav.flexbox a:hover {
+    color: black;
+    background: linear-gradient(to right, white 40%, lightblue);
+    border-radius: 5px;
+}
